@@ -1,0 +1,67 @@
+{
+  "roles": {
+    "admin": {
+      "allowed_tools": [
+        "document_search",
+        "ingest_document",
+        "ask_agent",
+        "web_research",
+        "web_search",
+        "run_code",
+        "fetch_url",
+        "graph_rag"
+      ],
+      "allowed_doc_categories": [
+        "research",
+        "technical",
+        "report",
+        "general"
+      ],
+      "can_ingest": true,
+      "can_use_browser": true,
+      "can_delete": true,
+      "description": "Full access — all documents, all tools, all operations"
+    },
+    "analyst": {
+      "allowed_tools": [
+        "document_search",
+        "ask_agent",
+        "graph_rag",
+        "run_code",
+        "web_search",
+        "web_research"
+      ],
+      "allowed_doc_categories": [
+        "research",
+        "technical",
+        "report",
+        "general"
+      ],
+      "can_ingest": false,
+      "can_use_browser": false,
+      "can_delete": false,
+      "description": "Standard access \u2014 RAG tools only, no ingestion or web browsing"
+    },
+    "viewer": {
+      "allowed_tools": [
+        "document_search"
+      ],
+      "allowed_doc_categories": [
+        "general",
+        "report"
+      ],
+      "can_ingest": false,
+      "can_use_browser": false,
+      "can_delete": false,
+      "description": "Read-only access \u2014 search and answer only"
+    }
+  },
+  "global_rules": {
+    "max_query_length": 1000,
+    "max_results_per_query": 10,
+    "require_citations": true,
+    "allow_web_search_roles": [
+      "admin"
+    ]
+  }
+}

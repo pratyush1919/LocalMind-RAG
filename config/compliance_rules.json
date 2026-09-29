@@ -1,0 +1,32 @@
+[
+  {
+    "id": "rule_001",
+    "name": "answer_has_citation",
+    "description": "Answer must contain at least one [Source N] citation",
+    "severity": "warning"
+  },
+  {
+    "id": "rule_002",
+    "name": "no_medical_advice_without_disclaimer",
+    "description": "Medical advice must include a disclaimer",
+    "severity": "error"
+  },
+  {
+    "id": "rule_003",
+    "name": "answer_not_empty",
+    "description": "Answer must be non-empty",
+    "severity": "error"
+  },
+  {
+    "id": "rule_004",
+    "name": "answer_length_reasonable",
+    "description": "Answer must be between 20 and 5000 characters",
+    "severity": "warning"
+  },
+  {
+    "id": "rule_005",
+    "name": "no_raw_pii_in_output",
+    "description": "Answer must not contain PII",
+    "severity": "error"
+  }
+]

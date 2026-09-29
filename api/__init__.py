@@ -1,0 +1,3 @@
+"""
+LocalMind-RAG API package.
+"""

@@ -1,0 +1,138 @@
+# ============================================================================
+# Environment & Secrets (Root & Frontend)
+# ============================================================================
+.env
+.env.*
+*.env
+**/.env
+**/.env.*
+**/.env*.local
+!.env.example
+!**/.env.example
+
+# ============================================================================
+# Frontend (Next.js / Node)
+# ============================================================================
+frontend/node_modules/
+**/node_modules/
+frontend/.next/
+**/.next/
+frontend/out/
+**/out/
+frontend/build/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# NPM / Yarn / PNPM debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================================================
+# Python Bytecode, Caches & Virtual Environments
+# ============================================================================
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+**/venv/
+**/env/
+**/ENV/
+
+# Python packaging & distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Python caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+**/.venv/
+venv/
+**/venv/
+env/
+**/env/
+ENV/
+**/ENV/
+
+# Test / tool caches
+.pytest_cache/
+**/.pytest_cache/
+.cache/
+**/.cache/
+.mypy_cache/
+**/.mypy_cache/
+.ruff_cache/
+**/.ruff_cache/
+
+# Frontend generated files
+frontend/node_modules/
+**/node_modules/
+frontend/.next/
+**/.next/
+frontend/out/
+**/out/
+frontend/build/
+**/build/
+
+# Frontend environment files
+frontend/.env.local
+**/.env.local
+
+# Reranker model cache
+flashrank_cache/
+**/flashrank_cache/
+
+# User uploads
+data/uploads/*
+!data/uploads/.gitkeep
+
+# Vector store runtime data
+vectorstore/*
+!vectorstore/.gitkeep
+
+# Memory runtime data
+memory/*
+!memory/.gitkeep
+
+# Runtime logs
+logs/*
+!logs/.gitkeep
+
+P3/tests/*
+tests/*
+# ============================================================================
+# Operating System & IDE Files
+# ============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+[Dd]esktop.ini
+
+# Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+*.swp
+*.swo
+*~
+# Local backup of vector store
+vectorstore_backup/

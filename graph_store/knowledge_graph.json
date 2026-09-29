@@ -1,0 +1,729 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "transformer",
+      "frequency": 5,
+      "id": "transformer"
+    },
+    {
+      "label": "neural net architecture",
+      "frequency": 0,
+      "id": "neural net architecture"
+    },
+    {
+      "label": "attention mechanism",
+      "frequency": 0,
+      "id": "attention mechanism"
+    },
+    {
+      "label": "OpenAI",
+      "frequency": 1,
+      "id": "openai"
+    },
+    {
+      "label": "GPT-3",
+      "frequency": 0,
+      "id": "gpt-3"
+    },
+    {
+      "label": "self-attention",
+      "frequency": 5,
+      "id": "self-attention"
+    },
+    {
+      "label": "rnn",
+      "frequency": 1,
+      "id": "rnn"
+    },
+    {
+      "label": "context",
+      "frequency": 0,
+      "id": "context"
+    },
+    {
+      "label": "context_vector",
+      "frequency": 0,
+      "id": "context_vector"
+    },
+    {
+      "label": "AttentionMechanism",
+      "frequency": 2,
+      "id": "attentionmechanism"
+    },
+    {
+      "label": "WeightedSum",
+      "frequency": 0,
+      "id": "weightedsum"
+    },
+    {
+      "label": "ContextVector",
+      "frequency": 0,
+      "id": "contextvector"
+    },
+    {
+      "label": "AttentionCoefficient",
+      "frequency": 1,
+      "id": "attentioncoefficient"
+    },
+    {
+      "label": "DotProduct",
+      "frequency": 0,
+      "id": "dotproduct"
+    },
+    {
+      "label": "hot",
+      "frequency": 2,
+      "id": "hot"
+    },
+    {
+      "label": "cold",
+      "frequency": 1,
+      "id": "cold"
+    },
+    {
+      "label": "temperature",
+      "frequency": 0,
+      "id": "temperature"
+    },
+    {
+      "label": "Attention",
+      "frequency": 2,
+      "id": "attention"
+    },
+    {
+      "label": "similarity",
+      "frequency": 0,
+      "id": "similarity"
+    },
+    {
+      "label": "word_embeddings",
+      "frequency": 1,
+      "id": "word_embeddings"
+    },
+    {
+      "label": "vector_spaces",
+      "frequency": 0,
+      "id": "vector_spaces"
+    },
+    {
+      "label": "key",
+      "frequency": 2,
+      "id": "key"
+    },
+    {
+      "label": "lock",
+      "frequency": 1,
+      "id": "lock"
+    },
+    {
+      "label": "representation",
+      "frequency": 0,
+      "id": "representation"
+    },
+    {
+      "label": "query",
+      "frequency": 0,
+      "id": "query"
+    },
+    {
+      "label": "self_attention",
+      "frequency": 2,
+      "id": "self_attention"
+    },
+    {
+      "label": "Vaswani",
+      "frequency": 0,
+      "id": "vaswani"
+    },
+    {
+      "label": "convolution",
+      "frequency": 0,
+      "id": "convolution"
+    },
+    {
+      "label": "attention_kernel",
+      "frequency": 2,
+      "id": "attention_kernel"
+    },
+    {
+      "label": "convolutional_kernel",
+      "frequency": 0,
+      "id": "convolutional_kernel"
+    },
+    {
+      "label": "single_attention_head",
+      "frequency": 2,
+      "id": "single_attention_head"
+    },
+    {
+      "label": "weighted_sum",
+      "frequency": 0,
+      "id": "weighted_sum"
+    },
+    {
+      "label": "convolutions",
+      "frequency": 1,
+      "id": "convolutions"
+    },
+    {
+      "label": "KeyQueryAttention",
+      "frequency": 2,
+      "id": "keyqueryattention"
+    },
+    {
+      "label": "MultipleAttention",
+      "frequency": 0,
+      "id": "multipleattention"
+    }
+  ],
+  "edges": [
+    {
+      "predicate": "is-a",
+      "predicates": [
+        "is-a"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "5e84e3ea-9ac0-435f-8b76-b7c5899a7133",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "5e84e3ea-9ac0-435f-8b76-b7c5899a7133"
+        }
+      ],
+      "source": "transformer",
+      "target": "neural net architecture"
+    },
+    {
+      "predicate": "produces",
+      "predicates": [
+        "produces"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "5e84e3ea-9ac0-435f-8b76-b7c5899a7133",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "5e84e3ea-9ac0-435f-8b76-b7c5899a7133"
+        }
+      ],
+      "source": "transformer",
+      "target": "attention mechanism"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "6c34fe2f-3853-4dfe-a6bd-942bdc498211",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "6c34fe2f-3853-4dfe-a6bd-942bdc498211"
+        }
+      ],
+      "source": "transformer",
+      "target": "query"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "6c34fe2f-3853-4dfe-a6bd-942bdc498211",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "6c34fe2f-3853-4dfe-a6bd-942bdc498211"
+        }
+      ],
+      "source": "transformer",
+      "target": "key"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "6c34fe2f-3853-4dfe-a6bd-942bdc498211",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "6c34fe2f-3853-4dfe-a6bd-942bdc498211"
+        }
+      ],
+      "source": "transformer",
+      "target": "attention"
+    },
+    {
+      "predicate": "produces",
+      "predicates": [
+        "produces"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "5e84e3ea-9ac0-435f-8b76-b7c5899a7133",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "5e84e3ea-9ac0-435f-8b76-b7c5899a7133"
+        }
+      ],
+      "source": "openai",
+      "target": "gpt-3"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "2fce9ad9-aade-4802-bdbc-7b7819b06e56",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "2fce9ad9-aade-4802-bdbc-7b7819b06e56"
+        }
+      ],
+      "source": "self-attention",
+      "target": "rnn"
+    },
+    {
+      "predicate": "produces",
+      "predicates": [
+        "produces"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "2fce9ad9-aade-4802-bdbc-7b7819b06e56",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "2fce9ad9-aade-4802-bdbc-7b7819b06e56"
+        }
+      ],
+      "source": "self-attention",
+      "target": "context_vector"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "8079982b-c86a-4666-9742-f1594286b653",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "8079982b-c86a-4666-9742-f1594286b653"
+        }
+      ],
+      "source": "self-attention",
+      "target": "similarity"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a"
+        }
+      ],
+      "source": "self-attention",
+      "target": "key"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a"
+        }
+      ],
+      "source": "self-attention",
+      "target": "lock"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "2fce9ad9-aade-4802-bdbc-7b7819b06e56",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "2fce9ad9-aade-4802-bdbc-7b7819b06e56"
+        }
+      ],
+      "source": "rnn",
+      "target": "context"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "69f105ec-2f10-4465-bb61-a5e03536915f",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "69f105ec-2f10-4465-bb61-a5e03536915f"
+        }
+      ],
+      "source": "attentionmechanism",
+      "target": "weightedsum"
+    },
+    {
+      "predicate": "produces",
+      "predicates": [
+        "produces"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "69f105ec-2f10-4465-bb61-a5e03536915f",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "69f105ec-2f10-4465-bb61-a5e03536915f"
+        }
+      ],
+      "source": "attentionmechanism",
+      "target": "contextvector"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "69f105ec-2f10-4465-bb61-a5e03536915f",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "69f105ec-2f10-4465-bb61-a5e03536915f"
+        }
+      ],
+      "source": "attentioncoefficient",
+      "target": "dotproduct"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "62511e1c-733f-42e9-89ee-150302e59c76",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "62511e1c-733f-42e9-89ee-150302e59c76"
+        }
+      ],
+      "source": "hot",
+      "target": "cold"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "62511e1c-733f-42e9-89ee-150302e59c76",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "62511e1c-733f-42e9-89ee-150302e59c76"
+        }
+      ],
+      "source": "hot",
+      "target": "temperature"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "62511e1c-733f-42e9-89ee-150302e59c76",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "62511e1c-733f-42e9-89ee-150302e59c76"
+        }
+      ],
+      "source": "cold",
+      "target": "temperature"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "61ed5140-371b-4afe-97b9-b0f18abeacbf",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "61ed5140-371b-4afe-97b9-b0f18abeacbf"
+        }
+      ],
+      "source": "attention",
+      "target": "similarity"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "e200ed4c-50d4-4883-8b33-30b4ae3b64c5",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "e200ed4c-50d4-4883-8b33-30b4ae3b64c5"
+        }
+      ],
+      "source": "attention",
+      "target": "weightedsum"
+    },
+    {
+      "predicate": "part-of",
+      "predicates": [
+        "part-of"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "61ed5140-371b-4afe-97b9-b0f18abeacbf",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "61ed5140-371b-4afe-97b9-b0f18abeacbf"
+        }
+      ],
+      "source": "word_embeddings",
+      "target": "vector_spaces"
+    },
+    {
+      "predicate": "is-a",
+      "predicates": [
+        "is-a"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a"
+        }
+      ],
+      "source": "key",
+      "target": "representation"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a"
+        }
+      ],
+      "source": "key",
+      "target": "lock"
+    },
+    {
+      "predicate": "is-a",
+      "predicates": [
+        "is-a"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "8c5d7151-dbb5-456c-a5ad-9422b5fab76a"
+        }
+      ],
+      "source": "lock",
+      "target": "representation"
+    },
+    {
+      "predicate": "introduced-by",
+      "predicates": [
+        "introduced-by"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "974a90b2-39f4-49d2-bfd5-afdd07c5baa1",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "974a90b2-39f4-49d2-bfd5-afdd07c5baa1"
+        }
+      ],
+      "source": "self_attention",
+      "target": "vaswani"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "974a90b2-39f4-49d2-bfd5-afdd07c5baa1",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "974a90b2-39f4-49d2-bfd5-afdd07c5baa1"
+        }
+      ],
+      "source": "self_attention",
+      "target": "convolution"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with",
+        "is-a"
+      ],
+      "weight": 2,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "974a90b2-39f4-49d2-bfd5-afdd07c5baa1",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "974a90b2-39f4-49d2-bfd5-afdd07c5baa1"
+        }
+      ],
+      "source": "attention_kernel",
+      "target": "convolutional_kernel"
+    },
+    {
+      "predicate": "uses",
+      "predicates": [
+        "uses"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "4aa640bc-fce6-48b5-8b2c-51d51ce9adc5",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "4aa640bc-fce6-48b5-8b2c-51d51ce9adc5"
+        }
+      ],
+      "source": "single_attention_head",
+      "target": "weighted_sum"
+    },
+    {
+      "predicate": "introduced-by",
+      "predicates": [
+        "introduced-by"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "4aa640bc-fce6-48b5-8b2c-51d51ce9adc5",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "4aa640bc-fce6-48b5-8b2c-51d51ce9adc5"
+        }
+      ],
+      "source": "single_attention_head",
+      "target": "vaswani"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "4aa640bc-fce6-48b5-8b2c-51d51ce9adc5",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "4aa640bc-fce6-48b5-8b2c-51d51ce9adc5"
+        }
+      ],
+      "source": "convolutions",
+      "target": "weighted_sum"
+    },
+    {
+      "predicate": "part-of",
+      "predicates": [
+        "part-of"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "e200ed4c-50d4-4883-8b33-30b4ae3b64c5",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "e200ed4c-50d4-4883-8b33-30b4ae3b64c5"
+        }
+      ],
+      "source": "keyqueryattention",
+      "target": "attention"
+    },
+    {
+      "predicate": "contrasts-with",
+      "predicates": [
+        "contrasts-with"
+      ],
+      "weight": 1,
+      "source_file": "b7dc2323_Self_Attention.pdf",
+      "chunk_id": "e200ed4c-50d4-4883-8b33-30b4ae3b64c5",
+      "provenance": [
+        {
+          "source_file": "b7dc2323_Self_Attention.pdf",
+          "chunk_id": "e200ed4c-50d4-4883-8b33-30b4ae3b64c5"
+        }
+      ],
+      "source": "keyqueryattention",
+      "target": "multipleattention"
+    }
+  ]
+}
