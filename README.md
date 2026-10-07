@@ -60,7 +60,7 @@ Standard Retrieval-Augmented Generation (RAG) systems operate in a single linear
 3. **No self-correction**: If initial retrieval pulls irrelevant context, single-shot LLM generators hallucinate because they lack a mechanism to critique their own evidence or re-query.
 4. **Data privacy risks**: Commercial cloud RAG services require transmitting sensitive internal documents to third-party APIs.
 
-**LocalMind-RAG** replaces single-shot lookup with an inspectable, local multi-agent research workflow running on consumer hardware (tested on an NVIDIA RTX 3050 with 6GB VRAM using Ollama). The system plans sub-queries, executes multi-stage hybrid retrieval across dense vectors, sparse lexical indices, and a knowledge graph, critiques synthesized drafts for factual grounding, and iteratively refines answers until an automated consensus threshold is satisfied.
+**LocalMind-RAG** replaces single-shot lookup with an inspectable multi-agent research workflow. The current setup uses Groq for LLM inference, while the embedding and retrieval components run locally.
 
 ---
 
@@ -251,7 +251,7 @@ Bi-encoders are fast ($O(1)$ search over indexed vectors) but evaluate query and
 A single LLM context window cannot retain months of research interactions without degrading attention and exhausting context budgets. Partitioning memory into an instant Answer Cache, chronological session dialogue (SQLite), cross-session semantic memory (ChromaDB), and user preferences (JSON) provides continuous context without context window bloat.
 
 ### Why a local-first model architecture?
-Research documents often contain confidential data that should not be dispatched to commercial cloud APIs. By structuring LocalMind-RAG around Ollama, local HuggingFace embeddings (`bge-small-en-v1.5`), and FlashRank, the core RAG pipeline executes completely offline with zero API cost. Cloud access (Groq) is strictly opt-in for web research.
+Research documents often contain confidential data that should not be dispatched to commercial cloud APIs. The retrieval components of LocalMind-RAG run locally using HuggingFace embeddings (`bge-small-en-v1.5`), ChromaDB, BM25, and FlashRank. The current LLM configuration uses Groq for inference, so a Groq API key is required when running the current setup.
 
 ### Why an explicit agent pipeline?
 Monolithic single-prompt RAG architectures bundle retrieval, synthesis, hallucination checking, and formatting into one prompt. When errors occur, diagnosing whether retrieval failed, planning was flawed, or the model hallucinated is impossible. Separating execution into discrete, observable LangGraph nodes makes the system debuggable, traceable, and capable of automated self-correction.
@@ -311,8 +311,7 @@ Embeddings:      Sentence-Transformers (BAAI/bge-small-en-v1.5)
 Reranking:       FlashRank (ms-marco-TinyBERT-L-2-v2)
 Graph Database:  NetworkX (MultiDiGraph)
 Guardrails:      Microsoft Presidio (Analyzer & Anonymizer) · spaCy
-Local LLM:       Ollama (qwen3:4b / mistral-rag)
-Cloud Fallback:  Groq (llama3-70b-8192)
+LLM Inference:   Groq (qwen/qwen3.8-27b)
 Frontend:        Next.js 14 (App Router) · React 18 · TypeScript
 Styling & UI:    Tailwind CSS · Radix UI · Lucide React · d3-force
 ```
@@ -324,12 +323,12 @@ Styling & UI:    Tailwind CSS · Radix UI · Lucide React · d3-force
 ### Prerequisites
 - **Python**: 3.11 or 3.12
 - **Node.js**: 18.x or 20.x
-- **Ollama**: Installed and running locally ([ollama.com](https://ollama.com))
-- **Hardware**: 8GB+ RAM, NVIDIA GPU recommended (tested on RTX 3050 6GB VRAM)
+- **Groq API key**: Required for the current LLM configuration
+- **Hardware**: 8GB+ RAM recommended for local development
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/vabs-2004/LocalMind-RAG.git
+git clone https://github.com/pratyush1919/LocalMind-RAG.git
 cd LocalMind-RAG
 ```
 
@@ -347,24 +346,30 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 3. Download Ollama model
-```bash
-ollama pull qwen3:4b
-```
+### 3. Configure environment
 
-### 4. Configure environment
-```bash
-cp .env.example .env
-```
-*(Default settings point to local Ollama on `http://localhost:11434` with zero API keys required for core local RAG operation).*
+Create a `.env` file in the project root with the following configuration:
 
-### 5. Launch the FastAPI backend
+```env
+LLM_BACKEND=groq
+GROQ_API_KEY=your_groq_api_key
+GROQ_MODEL=qwen/qwen3.8-27b
+GROQ_WEB_MODEL=qwen/qwen3.8-27b
+EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+EMBEDDING_DEVICE=cpu
+CHROMA_PERSIST_DIR=./vectorstore
+HF_DEPLOYMENT=false
+
+```
+Replace your_groq_api_key with your own Groq API key. Keep the key private and do not commit the .env file.
+
+### 4. Launch the FastAPI backend
 ```bash
 python -m uvicorn api.main:app --port 8000 --reload
 ```
 Interactive API documentation will be available at `http://localhost:8000/docs`.
 
-### 6. Launch the Next.js frontend
+### 5. Launch the Next.js frontend
 In a separate terminal:
 ```bash
 cd frontend
@@ -373,7 +378,7 @@ npm run dev
 ```
 Open `http://localhost:3000` in your browser.
 
-### 7. Ingest a document
+### 6. Ingest a document
 Upload files via the UI at `http://localhost:3000/documents` or via the API:
 ```bash
 curl -X POST "http://localhost:8000/api/documents/upload" \
@@ -408,7 +413,7 @@ LocalMind-RAG/
 1. **Local Model Concurrency**: Local Ollama execution is single-threaded on consumer GPU setups. Parallel queries queue behind ongoing inferences. Chunk extraction for Knowledge Graph generation is intentionally run sequentially to prevent memory paging faults.
 2. **Inference Latency**: Because the multi-agent pipeline includes planning, multi-stage retrieval, reranking, synthesis, critique, and consensus scoring, a cold query through local Ollama typically takes between 15 and 45 seconds on consumer GPUs. The SSE streaming endpoint provides real-time progress indicators to mitigate user wait perception.
 3. **Web Research Dependency**: While all core RAG features run 100% locally and offline, the optional Phase 11 Web Research agent requires internet connectivity for DuckDuckGo and a free-tier Groq API key for rapid web page summarization.
-4. **VRAM Footprint**: Running the local LLM (`qwen3:4b`), local embedding model (`bge-small-en-v1.5`), and FlashRank cross-encoder simultaneously requires approximately 4.5GB to 5.5GB of VRAM. If running on CPU-only machines, generation latency will be higher.
+4. **Local Resource Footprint**: The current setup does not require a local LLM. Groq handles LLM inference, while the embedding model (`bge-small-en-v1.5`) and retrieval components run locally. CPU-only systems can run the retrieval side, although embedding and indexing operations may be slower.
 
 ---
 
